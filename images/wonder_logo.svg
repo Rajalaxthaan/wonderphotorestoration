@@ -1,83 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 80 600 240" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="100%" height="100%">
   <defs>
-    <!-- Background Gradient -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b1120"/>
-      <stop offset="100%" stop-color="#020617"/>
-    </linearGradient>
-
-    <!-- Royal Blue Gradient for Camera/Brand -->
     <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#38bdf8"/>
       <stop offset="100%" stop-color="#0284c7"/>
     </linearGradient>
-
-    <!-- Gold Gradient for Accents/Sparkles -->
     <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fef08a"/>
       <stop offset="50%" stop-color="#fbbf24"/>
       <stop offset="100%" stop-color="#d97706"/>
     </linearGradient>
-
-    <!-- Glow Filter -->
     <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feGaussianBlur stdDeviation="4" result="blur"/>
       <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
   </defs>
 
   <!-- ICON GROUP -->
-  <g transform="translate(140, 200)">
-    <!-- Outer Frame / Camera Body Silhouette -->
-    <rect x="-70" y="-70" width="140" height="140" rx="32" fill="rgba(255,255,255,0.03)" stroke="rgba(56,189,248,0.2)" stroke-width="2"/>
+  <g transform="translate(60, 60)">
+    <!-- Outer Dashed Circle -->
+    <circle cx="0" cy="0" r="50" fill="none" stroke="rgba(56,189,248,0.2)" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+    <!-- Camera Body Silhouette -->
+    <rect x="-36" y="-26" width="72" height="52" rx="14" fill="rgba(255,255,255,0.03)" stroke="url(#blueGrad)" stroke-width="2.5"/>
 
     <!-- Split Background inside icon representing B&W to Color Transformation -->
     <clipPath id="frameClip">
-      <rect x="-66" y="-66" width="132" height="132" rx="28"/>
+      <rect x="-34" y="-24" width="68" height="48" rx="12"/>
     </clipPath>
-    
     <g clip-path="url(#frameClip)">
-      <rect x="-70" y="-70" width="66" height="140" fill="#1e293b" opacity="0.5"/>
-      <rect x="-4" y="-70" width="74" height="140" fill="url(#blueGrad)" opacity="0.15"/>
+      <rect x="-36" y="-26" width="34" height="52" fill="#1e293b" opacity="0.6"/>
+      <rect x="-2" y="-26" width="38" height="52" fill="url(#blueGrad)" opacity="0.2"/>
     </g>
 
-    <!-- Sleek Camera Lens Rings -->
-    <circle cx="0" cy="0" r="48" fill="none" stroke="url(#blueGrad)" stroke-width="3" opacity="0.4"/>
-    <circle cx="0" cy="0" r="38" fill="none" stroke="#f8fafc" stroke-width="2.5"/>
-    <circle cx="0" cy="0" r="28" fill="url(#blueGrad)"/>
+    <!-- Camera Lens Rings -->
+    <circle cx="0" cy="0" r="20" fill="none" stroke="url(#blueGrad)" stroke-width="2" opacity="0.5"/>
+    <circle cx="0" cy="0" r="15" fill="none" stroke="#f8fafc" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="10" fill="url(#blueGrad)"/>
 
-    <!-- Inner Lens Reflection / Shutter Detail -->
-    <path d="M-12 -6 C -4 -16, 12 -16, 16 -4 C 10 10, -6 14, -12 -6 Z" fill="#ffffff" opacity="0.3"/>
-    <circle cx="-6" cy="-6" r="6" fill="#f8fafc"/>
+    <!-- Inner Lens Reflection -->
+    <path d="M-4 -2 C -1 -5, 4 -5, 5 -1 C 3 3, -2 4, -4 -2 Z" fill="#ffffff" opacity="0.4"/>
+    <circle cx="-2" cy="-2" r="2.5" fill="#f8fafc"/>
 
     <!-- Glowing Magic Sparkles -->
     <g filter="url(#goldGlow)">
-      <path d="M 0 -55 L 5 -38 L 22 -35 L 7 -23 L 12 -6 L 0 -16 L -12 -6 L -7 -23 L -22 -35 L -5 -38 Z" fill="url(#goldGrad)" transform="translate(35, -30) scale(0.6)"/>
-      <path d="M 0 -25 L 3 -17 L 11 -15 L 4 -9 L 6 -2 L 0 -7 L -6 -2 L -4 -9 L -11 -15 L -3 -17 Z" fill="url(#goldGrad)" transform="translate(-45, 35) scale(0.4)"/>
-      <circle cx="-35" cy="-35" r="3" fill="#fef08a"/>
-      <circle cx="45" cy="35" r="2.5" fill="#fef08a"/>
+      <path d="M 0 -22 L 2 -15 L 9 -13 L 3 -9 L 5 -2 L 0 -6 L -5 -2 L -3 -9 L -9 -13 L -2 -15 Z" fill="url(#goldGrad)" transform="translate(25, -15) scale(0.6)"/>
+      <path d="M 0 -12 L 1.5 -8 L 5 -7 L 1.5 -5 L 2.5 -1 L 0 -3 L -2.5 -1 L -1.5 -5 L -5 -7 L -1.5 -8 Z" fill="url(#goldGrad)" transform="translate(-30, 20) scale(0.5)"/>
+      <circle cx="-24" cy="-22" r="2" fill="#fef08a"/>
+      <circle cx="30" cy="22" r="1.5" fill="#fef08a"/>
     </g>
-
-    <path d="M -25 50 Q 0 10, 45 -45" fill="none" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" filter="url(#goldGlow)"/>
   </g>
 
   <!-- TYPOGRAPHY / BRAND NAME -->
-  <g transform="translate(260, 0)">
-    <text x="0" y="180" 
+  <g transform="translate(130, 0)">
+    <text x="0" y="52" 
           font-family="'Outfit', 'Plus Jakarta Sans', 'Arial', sans-serif" 
-          font-size="44" 
+          font-size="28" 
           font-weight="800" 
           fill="#f8fafc" 
-          letter-spacing="2">WONDER PHOTO</text>
+          letter-spacing="1.5">WONDER</text>
 
-    <text x="3" y="218" 
+    <text x="2" y="74" 
           font-family="'Plus Jakarta Sans', 'Arial', sans-serif" 
-          font-size="18" 
+          font-size="11" 
           font-weight="600" 
           fill="#38bdf8" 
-          letter-spacing="4">RESTORATION STUDIO</text>
+          letter-spacing="3.5">PHOTO RESTORATION</text>
 
-    <rect x="3" y="235" width="70" height="4" rx="2" fill="url(#goldGrad)"/>
-    <rect x="79" y="235" width="20" height="4" rx="2" fill="#38bdf8"/>
+    <rect x="2" y="85" width="45" height="3" rx="1.5" fill="url(#goldGrad)"/>
+    <rect x="51" y="85" width="15" height="3" rx="1.5" fill="#38bdf8"/>
   </g>
 </svg>
