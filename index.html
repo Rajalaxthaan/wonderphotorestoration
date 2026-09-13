@@ -42,11 +42,11 @@
         .hero h1 { font-family: 'Outfit', sans-serif; font-size: 2.3rem; font-weight: 800; margin-bottom: 10px; color: var(--text-bright); }
         .hero p { color: var(--text-muted); font-size: 1rem; max-width: 700px; margin: 0 auto 15px; }
         
-        /* Trust Badges Bar */
+        /* Trust Bar */
         .trust-bar { display: flex; justify-content: center; gap: 30px; margin-bottom: 25px; font-size: 0.85rem; color: var(--primary); font-weight: 600; flex-wrap: wrap; }
         .trust-bar span { display: inline-flex; align-items: center; gap: 6px; }
 
-        /* How to Order Steps Section */
+        /* How to Order Steps */
         .steps-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 900px; margin: 25px auto 40px; padding: 0 20px; }
         .step-box { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; text-align: center; }
         .step-box i { font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 8px; }
@@ -63,7 +63,7 @@
         .price-badge { position: absolute; top: 15px; right: 15px; background: var(--accent-gold); color: #000; font-weight: 800; font-size: 0.85rem; padding: 6px 12px; border-radius: 20px; z-index: 20; box-shadow: 0 4px 12px rgba(251,191,36,0.3); }
 
         /* Before-After Slider Container */
-        .img-container { width: 100%; height: 300px; border-radius: 12px; overflow: hidden; position: relative; margin-bottom: 20px; border: 1px solid var(--glass-border); user-select: none; }
+        .img-container { width: 100%; height: 300px; border-radius: 12px; overflow: hidden; position: relative; margin-bottom: 20px; border: 1px solid var(--glass-border); user-select: none; cursor: zoom-in; }
         
         .img-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #020617; pointer-events: none; -webkit-user-drag: none; }
         
@@ -84,6 +84,13 @@
         /* Order Button */
         .btn-order { background: linear-gradient(135deg, #38bdf8, #0284c7); color: white; width: 100%; padding: 12px; border-radius: 10px; border: none; font-weight: 700; font-size: 0.95rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; transition: 0.2s; box-shadow: 0 4px 15px rgba(56,189,248,0.3); }
         .btn-order:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* Fullscreen Lightbox Modal */
+        .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(2, 6, 23, 0.95); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
+        .lightbox-content { max-width: 90%; max-height: 90vh; object-fit: contain; border-radius: 12px; border: 1px solid var(--glass-border); }
+        .lightbox-close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 2.5rem; cursor: pointer; z-index: 2010; font-weight: 300; transition: 0.2s; }
+        .lightbox-close:hover { color: var(--primary); }
+        .lightbox-hint { position: absolute; bottom: 20px; color: var(--text-muted); font-size: 0.8rem; background: rgba(255,255,255,0.05); padding: 5px 15px; border-radius: 20px; }
 
         /* Disclaimer Footer */
         .disclaimer-box { background: rgba(255,255,255,0.015); border-top: 1px solid var(--glass-border); padding: 30px 0; margin-top: 30px; text-align: center; }
@@ -114,12 +121,12 @@
         <section class="hero">
             <div class="container">
                 <h1>Professional Photo Restoration</h1>
-                <p>Slide to see Before & After transformation. Turn your old, blurred, or damaged photos into sharp, high-definition masterpieces instantly[cite: 1].</p>
+                <p>Slide to see Before & After transformation. Turn your old, blurred, or damaged photos into sharp, high-definition masterpieces instantly.</p>
                 
                 <div class="trust-bar">
-                    <span><i class="fas fa-check-circle"></i> Fast WhatsApp Delivery[cite: 1]</span>
-                    <span><i class="fas fa-shield-alt"></i> Secure GPay Payment[cite: 1]</span>
-                    <span><i class="fas fa-star"></i> HD Studio Quality[cite: 1]</span>
+                    <span><i class="fas fa-check-circle"></i> Fast WhatsApp Delivery</span>
+                    <span><i class="fas fa-shield-alt"></i> Secure GPay Payment</span>
+                    <span><i class="fas fa-star"></i> HD Studio Quality</span>
                 </div>
 
                 <!-- How to Order Steps -->
@@ -150,109 +157,109 @@
                     
                     <!-- Card 1 -->
                     <div class="card">
-                        <div class="price-badge">Just Rs. 50/-[cite: 1]</div>
-                        <div class="img-container">
+                        <div class="price-badge">Just Rs. 50/-</div>
+                        <div class="img-container" onclick="openLightbox('images/sample1.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample1.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80'">
                             <div class="img-before-wrap" style="width: 50%;">
                                 <img src="images/sample1_before.jpg" alt="Before" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80'; this.style.filter='grayscale(100%)';">
                             </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-range" oninput="moveSlider(this)">
+                            <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <h3>Classic Portrait Restoration</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
                     </div>
 
                     <!-- Card 2 -->
                     <div class="card">
-                        <div class="price-badge">Just Rs. 50/-[cite: 1]</div>
-                        <div class="img-container">
+                        <div class="price-badge">Just Rs. 50/-</div>
+                        <div class="img-container" onclick="openLightbox('images/sample2.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample2.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'">
                             <div class="img-before-wrap" style="width: 50%;">
                                 <img src="images/sample2_before.jpg" alt="Before" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'; this.style.filter='grayscale(100%)';">
                             </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-range" oninput="moveSlider(this)">
+                            <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <h3>Old Damaged Photo Repair</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
                     </div>
 
                     <!-- Card 3 -->
                     <div class="card">
-                        <div class="price-badge">Just Rs. 50/-[cite: 1]</div>
-                        <div class="img-container">
+                        <div class="price-badge">Just Rs. 50/-</div>
+                        <div class="img-container" onclick="openLightbox('images/sample3.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample3.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80'">
                             <div class="img-before-wrap" style="width: 50%;">
                                 <img src="images/sample3_before.jpg" alt="Before" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80'; this.style.filter='sepia(100%)';">
                             </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-range" oninput="moveSlider(this)">
+                            <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <h3>Black & White Colorization</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
                     </div>
 
                     <!-- Card 4 -->
                     <div class="card">
-                        <div class="price-badge">Just Rs. 50/-[cite: 1]</div>
-                        <div class="img-container">
+                        <div class="price-badge">Just Rs. 50/-</div>
+                        <div class="img-container" onclick="openLightbox('images/sample4.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample4.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=600&q=80'">
                             <div class="img-before-wrap" style="width: 50%;">
                                 <img src="images/sample4_before.jpg" alt="Before" onerror="this.src='https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=600&q=80'; this.style.filter='grayscale(80%)';">
                             </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-range" oninput="moveSlider(this)">
+                            <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <h3>HD Clarity Enhancement</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
                     </div>
 
                     <!-- Card 5 -->
                     <div class="card">
-                        <div class="price-badge">Just Rs. 50/-[cite: 1]</div>
-                        <div class="img-container">
+                        <div class="price-badge">Just Rs. 50/-</div>
+                        <div class="img-container" onclick="openLightbox('images/sample5.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample5.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
                             <div class="img-before-wrap" style="width: 50%;">
                                 <img src="images/sample5_before.jpg" alt="Before" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'; this.style.filter='grayscale(100%)';">
                             </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-range" oninput="moveSlider(this)">
+                            <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <h3>Vintage Family Photo Fix</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
                     </div>
 
                     <!-- Card 6 -->
                     <div class="card">
-                        <div class="price-badge">Just Rs. 50/-[cite: 1]</div>
-                        <div class="img-container">
+                        <div class="price-badge">Just Rs. 50/-</div>
+                        <div class="img-container" onclick="openLightbox('images/sample6.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample6.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80'">
                             <div class="img-before-wrap" style="width: 50%;">
                                 <img src="images/sample6_before.jpg" alt="Before" onerror="this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80'; this.style.filter='grayscale(90%)';">
                             </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-range" oninput="moveSlider(this)">
+                            <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <h3>Studio Retouch & Polish</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
                     </div>
 
@@ -260,6 +267,13 @@
             </div>
         </section>
     </main>
+
+    <!-- Lightbox Fullscreen Popup HTML -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div class="lightbox-hint">Click anywhere to close</div>
+    </div>
 
     <footer class="disclaimer-box">
         <div class="container">
@@ -275,6 +289,19 @@
             const beforeWrap = container.querySelector('.img-before-wrap');
             const value = slider.value;
             beforeWrap.style.width = value + '%';
+        }
+
+        // Lightbox Functions for Full Screen View
+        function openLightbox(imgSrc) {
+            const modal = document.getElementById('lightboxModal');
+            const modalImg = document.getElementById('lightboxImg');
+            modal.style.display = 'flex';
+            modalImg.src = imgSrc;
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightboxModal');
+            modal.style.display = 'none';
         }
 
         // Additional Image Protection Script (Disable Drag & Context Menu)
