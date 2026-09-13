@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P794H2H90L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P794H2H90L');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Instantly restore your old, damaged, or faded photo online with AI-powered enhancement by MEERA'S DIGITAL, Paramakudi.">
+    <title>AI Photo Restoration Tool | MEERA'S DIGITAL</title>
+    <link rel="canonical" href="https://meerasdigital.vercel.app/restore">
+
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0b1120">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .restore-upload-box {
+            border: 2px dashed var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s;
+            background: rgba(255,255,255,0.02);
+        }
+        .restore-upload-box:hover, .restore-upload-box.dragover {
+            border-color: var(--primary-light-blue);
+            background: rgba(56,189,248,0.06);
+        }
+        .restore-upload-box i { font-size: 2.5rem; color: var(--primary-light-blue); margin-bottom: 12px; }
+        .restore-preview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+        .restore-preview-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 12px;
+            text-align: center;
+        }
+        .restore-preview-box img { width: 100%; border-radius: 8px; display: block; }
+        .restore-preview-box h4 { color: var(--text-bright); margin-bottom: 10px; font-size: 0.95rem; }
+        .restore-status {
+            text-align: center;
+            padding: 20px;
+            color: var(--primary-light-blue);
+            font-weight: 600;
+        }
+        .restore-status i { margin-right: 8px; }
+        @media (max-width: 768px) {
+            .restore-preview-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar" id="header">
+        <div class="container nav-container">
+            <a href="index.html#home" class="brand-logo">
+                <img src="images/logo.png" alt="MEERA'S DIGITAL Logo" onerror="this.style.display='none'">
+                <div class="brand-text">
+                    <span class="brand-name">MEERA'S DIGITAL</span>
+                    <span class="brand-tagline">A Revolution in Photo Restoration</span>
+                </div>
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="restore.html" class="nav-link active">AI Restore</a>
+                <a href="index.html#pricing" class="nav-link">Pricing</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="reviews.html" class="nav-link">Reviews</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://wa.me/917904496883?text=Hello%20MEERA'S%20DIGITAL,%20I%20would%20like%20to%20inquire%20about%20your%20photo%20restoration%20services." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp header-wa-btn">
+                    <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
+                </a>
+                <button class="hamburger-menu" id="hamburger" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section" style="min-height: auto; padding-top: 150px; padding-bottom: 0px;">
+            <div class="container" style="text-align: center; max-width: 900px;">
+                <span class="section-subtitle" style="margin-bottom: 4px;">AI Photo Restoration</span>
+                <h1 class="hero-title" style="font-size: 2.2rem; margin-bottom: 8px;">Restore Your Old Photo Instantly</h1>
+                <p style="color: var(--text-muted); font-size: 1.00rem; line-height: 1.5; max-width: 700px; margin: 0 auto;">
+                    Upload your old, faded, or damaged photo below and get an AI-enhanced preview instantly. For the best, professionally hand-finished result, our expert K.K. Rajkumar can perfect it further.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding" style="padding-top: 30px;">
+            <div class="container" style="max-width: 800px;">
+
+                <div class="glass-card" style="padding: 30px;">
+                    <div class="restore-upload-box" id="uploadBox">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p style="color: var(--text-bright); font-weight: 600;">Click to upload or drag & drop your photo</p>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 6px;">JPG or PNG, up to 8MB</p>
+                        <input type="file" id="fileInput" accept="image/*" style="display:none;">
+                    </div>
+
+                    <div id="restoreStatus"></div>
+
+                    <div id="previewSection" style="display:none;">
+                        <div class="restore-preview-grid">
+                            <div class="restore-preview-box">
+                                <h4>Original</h4>
+                                <img id="originalPreview" src="" alt="Original photo">
+                            </div>
+                            <div class="restore-preview-box">
+                                <h4>AI Restored Preview</h4>
+                                <img id="resultPreview" src="" alt="Restored photo">
+                            </div>
+                        </div>
+
+                        <div style="text-align:center; margin-top: 24px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+                            <button class="btn btn-primary" id="restoreBtn">
+                                <i class="fas fa-magic"></i> Restore My Photo
+                            </button>
+                            <a href="#" id="downloadBtn" class="btn btn-cinematic-gold" style="display:none;" download="restored-photo.png">
+                                <i class="fas fa-download"></i> Download Result
+                            </a>
+                            <button class="btn" id="resetBtn" style="background: rgba(255,255,255,0.08); color: var(--text-bright);">
+                                <i class="fas fa-redo"></i> Try Another Photo
+                            </button>
+                        </div>
+
+                        <p style="text-align:center; color: var(--text-muted); font-size: 0.9rem; margin-top: 24px;">
+                            Love the result? For a perfected, hand-finished final version, send this photo to our WhatsApp
+                            <a href="https://wa.me/917904496883" style="color: var(--primary-light-blue); font-weight:600;">+91 79044 96883</a>.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo-text">MEERA'S DIGITAL</span>
+                    <p class="footer-tagline">A Revolution in Photo Restoration</p>
+                    <p class="footer-owner">Proprietor: K.K. Rajkumar</p>
+                </div>
+                <div class="footer-nav">
+                    <a href="index.html#home">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="restore.html">AI Restore</a>
+                    <a href="index.html#pricing">Pricing</a>
+                    <a href="index.html#about">About</a>
+                    <a href="reviews.html">Reviews</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://wa.me/917904496883" target="_blank" aria-label="WhatsApp" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="index.html#contact" aria-label="Phone" class="social-icon"><i class="fas fa-phone"></i></a>
+                    <a href="index.html#contact" aria-label="Envelope" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MEERA'S DIGITAL. All Rights Reserved. Designed with Excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="js/script.js" defer></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const uploadBox = document.getElementById('uploadBox');
+        const fileInput = document.getElementById('fileInput');
+        const previewSection = document.getElementById('previewSection');
+        const originalPreview = document.getElementById('originalPreview');
+        const resultPreview = document.getElementById('resultPreview');
+        const restoreBtn = document.getElementById('restoreBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const statusEl = document.getElementById('restoreStatus');
+
+        let selectedBase64 = null;
+        let selectedMime = null;
+
+        uploadBox.addEventListener('click', () => fileInput.click());
+        uploadBox.addEventListener('dragover', (e) => { e.preventDefault(); uploadBox.classList.add('dragover'); });
+        uploadBox.addEventListener('dragleave', () => uploadBox.classList.remove('dragover'));
+        uploadBox.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadBox.classList.remove('dragover');
+            if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+        });
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files[0]) handleFile(e.target.files[0]);
+        });
+
+        function handleFile(file) {
+            if (!file.type.startsWith('image/')) {
+                alert('Please upload an image file.');
+                return;
+            }
+            // [Resize before upload]: periya photos-a max 1400px width-ku resize pannurom,
+            // upload speed matrum server body-size limit-ku (~4.5MB) uL fit aaga
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const maxW = 1400;
+                    const scale = img.width > maxW ? maxW / img.width : 1;
+                    canvas.width = img.width * scale;
+                    canvas.height = img.height * scale;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    const dataUrl = canvas.toDataURL('image/jpeg', 0.9);
+                    selectedBase64 = dataUrl.split(',')[1];
+                    selectedMime = 'image/jpeg';
+                    originalPreview.src = dataUrl;
+                    resultPreview.src = dataUrl;
+                    previewSection.style.display = 'block';
+                    downloadBtn.style.display = 'none';
+                    statusEl.innerHTML = '';
+                };
+                img.src = ev.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        restoreBtn.addEventListener('click', async () => {
+            if (!selectedBase64) return;
+            restoreBtn.disabled = true;
+            statusEl.innerHTML = '<div class="restore-status"><i class="fas fa-spinner fa-spin"></i> Restoring your photo... this can take up to 30 seconds.</div>';
+
+            try {
+                const response = await fetch('/api/restore-photo', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ imageBase64: selectedBase64, mimeType: selectedMime })
+                });
+                const data = await response.json();
+
+                if (data.imageBase64) {
+                    const resultUrl = `data:${data.mimeType};base64,${data.imageBase64}`;
+                    resultPreview.src = resultUrl;
+                    downloadBtn.href = resultUrl;
+                    downloadBtn.style.display = 'inline-flex';
+                    statusEl.innerHTML = '<div class="restore-status" style="color:#22c55e;"><i class="fas fa-check-circle"></i> Restoration complete!</div>';
+                } else {
+                    statusEl.innerHTML = `<div class="restore-status" style="color:#ef4444;"><i class="fas fa-exclamation-circle"></i> ${data.error || 'Something went wrong. Please try again.'}</div>`;
+                }
+            } catch (err) {
+                statusEl.innerHTML = '<div class="restore-status" style="color:#ef4444;"><i class="fas fa-exclamation-circle"></i> Network error. Please try again.</div>';
+            } finally {
+                restoreBtn.disabled = false;
+            }
+        });
+
+        resetBtn.addEventListener('click', () => {
+            selectedBase64 = null;
+            selectedMime = null;
+            fileInput.value = '';
+            previewSection.style.display = 'none';
+            statusEl.innerHTML = '';
+        });
+    });
+    </script>
+</body>
+</html>
