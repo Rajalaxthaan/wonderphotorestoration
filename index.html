@@ -24,7 +24,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: var(--bg-deep); color: var(--text-bright); line-height: 1.6; overflow-x: hidden; }
+        body { background-color: var(--bg-deep); color: var(--text-bright); line-height: 1.6; overflow-x: hidden; -webkit-user-select: none; user-select: none; }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
@@ -65,13 +65,13 @@
         /* Before-After Slider Container */
         .img-container { width: 100%; height: 300px; border-radius: 12px; overflow: hidden; position: relative; margin-bottom: 20px; border: 1px solid var(--glass-border); user-select: none; }
         
-        .img-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #020617; pointer-events: none; }
+        .img-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #020617; pointer-events: none; -webkit-user-drag: none; }
         
         .img-before-wrap { position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; z-index: 2; border-right: 2px solid var(--primary); }
         .img-before-wrap img { width: 320px; height: 100%; max-width: none; }
 
         /* Labels */
-        .badge-before, .badge-after { position: absolute; bottom: 10px; background: rgba(0,0,0,0.75); color: #fff; font-size: 0.7rem; padding: 3px 8px; border-radius: 4px; z-index: 5; font-weight: 600; letter-spacing: 0.5px; }
+        .badge-before, .badge-after { position: absolute; bottom: 10px; background: rgba(0,0,0,0.75); color: #fff; font-size: 0.7rem; padding: 3px 8px; border-radius: 4px; z-index: 5; font-weight: 600; letter-spacing: 0.5px; pointer-events: none; }
         .badge-before { left: 10px; color: #f87171; }
         .badge-after { right: 10px; color: #4ade80; }
 
@@ -96,7 +96,7 @@
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
     <header class="navbar">
         <div class="container nav-container">
@@ -114,12 +114,12 @@
         <section class="hero">
             <div class="container">
                 <h1>Professional Photo Restoration</h1>
-                <p>Slide to see Before & After transformation. Turn your old, blurred, or damaged photos into sharp, high-definition masterpieces instantly.</p>
+                <p>Slide to see Before & After transformation. Turn your old, blurred, or damaged photos into sharp, high-definition masterpieces instantly[cite: 1].</p>
                 
                 <div class="trust-bar">
-                    <span><i class="fas fa-check-circle"></i> Fast WhatsApp Delivery</span>
-                    <span><i class="fas fa-shield-alt"></i> Secure GPay Payment</span>
-                    <span><i class="fas fa-star"></i> HD Studio Quality</span>
+                    <span><i class="fas fa-check-circle"></i> Fast WhatsApp Delivery[cite: 1]</span>
+                    <span><i class="fas fa-shield-alt"></i> Secure GPay Payment[cite: 1]</span>
+                    <span><i class="fas fa-star"></i> HD Studio Quality[cite: 1]</span>
                 </div>
 
                 <!-- How to Order Steps -->
@@ -150,7 +150,7 @@
                     
                     <!-- Card 1 -->
                     <div class="card">
-                        <div class="price-badge">Just Rs. 50/-</div>
+                        <div class="price-badge">Just Rs. 50/-[cite: 1]</div>
                         <div class="img-container">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
@@ -162,13 +162,13 @@
                         </div>
                         <h3>Classic Portrait Restoration</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
                         </a>
                     </div>
 
                     <!-- Card 2 -->
                     <div class="card">
-                        <div class="price-badge">Just Rs. 50/-</div>
+                        <div class="price-badge">Just Rs. 50/-[cite: 1]</div>
                         <div class="img-container">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
@@ -180,13 +180,13 @@
                         </div>
                         <h3>Old Damaged Photo Repair</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
                         </a>
                     </div>
 
                     <!-- Card 3 -->
                     <div class="card">
-                        <div class="price-badge">Just Rs. 50/-</div>
+                        <div class="price-badge">Just Rs. 50/-[cite: 1]</div>
                         <div class="img-container">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
@@ -198,13 +198,13 @@
                         </div>
                         <h3>Black & White Colorization</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
                         </a>
                     </div>
 
                     <!-- Card 4 -->
                     <div class="card">
-                        <div class="price-badge">Just Rs. 50/-</div>
+                        <div class="price-badge">Just Rs. 50/-[cite: 1]</div>
                         <div class="img-container">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
@@ -216,13 +216,13 @@
                         </div>
                         <h3>HD Clarity Enhancement</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
                         </a>
                     </div>
 
                     <!-- Card 5 -->
                     <div class="card">
-                        <div class="price-badge">Just Rs. 50/-</div>
+                        <div class="price-badge">Just Rs. 50/-[cite: 1]</div>
                         <div class="img-container">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
@@ -234,13 +234,13 @@
                         </div>
                         <h3>Vintage Family Photo Fix</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
                         </a>
                     </div>
 
                     <!-- Card 6 -->
                     <div class="card">
-                        <div class="price-badge">Just Rs. 50/-</div>
+                        <div class="price-badge">Just Rs. 50/-[cite: 1]</div>
                         <div class="img-container">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
@@ -252,7 +252,7 @@
                         </div>
                         <h3>Studio Retouch & Polish</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
                         </a>
                     </div>
 
@@ -276,6 +276,14 @@
             const value = slider.value;
             beforeWrap.style.width = value + '%';
         }
+
+        // Additional Image Protection Script (Disable Drag & Context Menu)
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('dragstart', event => {
+            if (event.target.tagName === 'IMG') {
+                event.preventDefault();
+            }
+        });
     </script>
 </body>
 </html>
