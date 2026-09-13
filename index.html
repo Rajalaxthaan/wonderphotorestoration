@@ -38,11 +38,11 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* Header */
-        .navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(11, 17, 32, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--glass-border); z-index: 1000; padding: 15px 0; }
+        /* Header & Logo Styling */
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(11, 17, 32, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--glass-border); z-index: 1000; padding: 10px 0; }
         .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .brand-name { font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--text-bright); letter-spacing: 0.5px; }
-        .brand-tagline { font-size: 0.7rem; color: var(--primary); display: block; }
+        
+        .logo-img { height: 42px; width: auto; display: block; object-fit: contain; }
 
         .btn-whatsapp { background: #25d366; color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; transition: 0.2s; }
         .btn-whatsapp:hover { background: #22bf5b; transform: translateY(-2px); }
@@ -112,7 +112,7 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
-            .brand-name { font-size: 1rem; }
+            .logo-img { height: 35px; }
             .trust-bar { gap: 15px; font-size: 0.75rem; }
         }
     </style>
@@ -121,10 +121,9 @@
 
     <header class="navbar">
         <div class="container nav-container">
-            <div class="brand">
-                <span class="brand-name">WONDER PHOTO RESTORATION</span>
-                <span class="brand-tagline">Professional Studio Showcase</span>
-            </div>
+            <a href="#" class="brand-logo-link">
+                <img src="images/wonder_logo.svg" alt="Wonder Photo Restoration" class="logo-img">
+            </a>
             <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-whatsapp">
                 <i class="fab fa-whatsapp"></i> <span>WhatsApp Us</span>
             </a>
@@ -298,7 +297,7 @@
     <footer class="disclaimer-box">
         <div class="container">
             <p class="disclaimer-text">
-                <strong>Please Read Carefully:</strong> Photo restoration is processed using advanced AI technology. Facial features may vary by 5% to 10% from the original. Once payment is made and processing begins, fees are strictly non-refundable under any circumstances.
+                <strong>Pls Read Carefully:</strong> Photo restoration is processed using advanced AI technology. Facial features may vary by 5% to 10% from the original. Once payment is made and processing begins, fees are strictly non-refundable under any circumstances.
             </p>
         </div>
     </footer>
