@@ -42,8 +42,15 @@
         .hero p { color: var(--text-muted); font-size: 1rem; max-width: 700px; margin: 0 auto 15px; }
         
         /* Trust Badges Bar */
-        .trust-bar { display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; font-size: 0.85rem; color: var(--primary); font-weight: 600; flex-wrap: wrap; }
+        .trust-bar { display: flex; justify-content: center; gap: 30px; margin-bottom: 25px; font-size: 0.85rem; color: var(--primary); font-weight: 600; flex-wrap: wrap; }
         .trust-bar span { display: inline-flex; align-items: center; gap: 6px; }
+
+        /* How to Order Steps Section */
+        .steps-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 900px; margin: 25px auto 40px; padding: 0 20px; }
+        .step-box { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; text-align: center; }
+        .step-box i { font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 8px; }
+        .step-box h4 { font-size: 0.95rem; margin-bottom: 5px; color: var(--text-bright); }
+        .step-box p { font-size: 0.75rem; color: var(--text-muted); }
 
         /* Gallery Grid */
         .showcase-section { padding: 10px 0 70px; }
@@ -106,13 +113,33 @@
         <section class="hero">
             <div class="container">
                 <h1>Professional Photo Restoration</h1>
-                <p>Slide to see Before & After transformation. Turn your old, blurred, or damaged photos into sharp, high-definition masterpieces instantly[cite: 1]!</p>
+                <p>Slide to see Before & After transformation. Turn your old, blurred, or damaged photos into sharp, high-definition masterpieces instantly.</p>
                 
                 <div class="trust-bar">
                     <span><i class="fas fa-check-circle"></i> Fast WhatsApp Delivery</span>
                     <span><i class="fas fa-shield-alt"></i> Secure GPay Payment</span>
                     <span><i class="fas fa-star"></i> HD Studio Quality</span>
                 </div>
+
+                <!-- How to Order Steps -->
+                <div class="steps-container">
+                    <div class="step-box">
+                        <i class="fas fa-hand-pointer"></i>
+                        <h4>1. Click Order Now</h4>
+                        <p>Choose any style and click the WhatsApp order button below.</p>
+                    </div>
+                    <div class="step-box">
+                        <i class="fas fa-qrcode"></i>
+                        <h4>2. Pay Rs. 50/- via GPay</h4>
+                        <p>Scan QR code on WhatsApp and send payment screenshot.</p>
+                    </div>
+                    <div class="step-box">
+                        <i class="fas fa-image"></i>
+                        <h4>3. Get HD Photo</h4>
+                        <p>Receive your restored photo directly on WhatsApp within hours.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -134,7 +161,7 @@
                         </div>
                         <h3>Classic Portrait Restoration</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
                     </div>
 
@@ -152,7 +179,7 @@
                         </div>
                         <h3>Old Damaged Photo Repair</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
                     </div>
 
@@ -170,7 +197,7 @@
                         </div>
                         <h3>Black & White Colorization</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
                     </div>
 
@@ -188,7 +215,7 @@
                         </div>
                         <h3>HD Clarity Enhancement</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
                     </div>
 
@@ -206,7 +233,7 @@
                         </div>
                         <h3>Vintage Family Photo Fix</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
                     </div>
 
@@ -224,7 +251,7 @@
                         </div>
                         <h3>Studio Retouch & Polish</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
-                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)[cite: 1]
+                            <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
                     </div>
 
