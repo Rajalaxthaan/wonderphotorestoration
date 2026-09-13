@@ -63,7 +63,7 @@
         .price-badge { position: absolute; top: 15px; right: 15px; background: var(--accent-gold); color: #000; font-weight: 800; font-size: 0.85rem; padding: 6px 12px; border-radius: 20px; z-index: 20; box-shadow: 0 4px 12px rgba(251,191,36,0.3); }
 
         /* Before-After Slider Container */
-        .img-container { width: 100%; height: 300px; border-radius: 12px; overflow: hidden; position: relative; margin-bottom: 12px; border: 1px solid var(--glass-border); user-select: none; }
+        .img-container { width: 100%; height: 300px; border-radius: 12px; overflow: hidden; position: relative; margin-bottom: 12px; border: 1px solid var(--glass-border); user-select: none; cursor: pointer; }
         
         .img-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #020617; pointer-events: none; -webkit-user-drag: none; }
         
@@ -162,14 +162,14 @@
                     <!-- Card 1 -->
                     <div class="card">
                         <div class="price-badge">Just Rs. 50/-</div>
-                        <div class="img-container">
+                        <div class="img-container" onclick="openLightbox('images/sample1.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample1.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80'">
                             <div class="img-before-wrap" style="width: 50%;">
                                 <img src="images/sample1_before.jpg" alt="Before" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80'; this.style.filter='grayscale(100%)';">
                             </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-range" oninput="moveSlider(this)">
+                            <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <button class="btn-zoom" onclick="openLightbox('images/sample1.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
                         <h3>Classic Portrait Restoration</h3>
@@ -181,14 +181,14 @@
                     <!-- Card 2 -->
                     <div class="card">
                         <div class="price-badge">Just Rs. 50/-</div>
-                        <div class="img-container">
+                        <div class="img-container" onclick="openLightbox('images/sample2.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample2.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'">
                             <div class="img-before-wrap" style="width: 50%;">
                                 <img src="images/sample2_before.jpg" alt="Before" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'; this.style.filter='grayscale(100%)';">
                             </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-range" oninput="moveSlider(this)">
+                            <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <button class="btn-zoom" onclick="openLightbox('images/sample2.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
                         <h3>Old Damaged Photo Repair</h3>
@@ -200,14 +200,14 @@
                     <!-- Card 3 -->
                     <div class="card">
                         <div class="price-badge">Just Rs. 50/-</div>
-                        <div class="img-container">
+                        <div class="img-container" onclick="openLightbox('images/sample3.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample3.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80'">
                             <div class="img-before-wrap" style="width: 50%;">
                                 <img src="images/sample3_before.jpg" alt="Before" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80'; this.style.filter='sepia(100%)';">
                             </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-range" oninput="moveSlider(this)">
+                            <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <button class="btn-zoom" onclick="openLightbox('images/sample3.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
                         <h3>Black & White Colorization</h3>
@@ -219,14 +219,14 @@
                     <!-- Card 4 -->
                     <div class="card">
                         <div class="price-badge">Just Rs. 50/-</div>
-                        <div class="img-container">
+                        <div class="img-container" onclick="openLightbox('images/sample4.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample4.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=600&q=80'">
                             <div class="img-before-wrap" style="width: 50%;">
                                 <img src="images/sample4_before.jpg" alt="Before" onerror="this.src='https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=600&q=80'; this.style.filter='grayscale(80%)';">
                             </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-range" oninput="moveSlider(this)">
+                            <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <button class="btn-zoom" onclick="openLightbox('images/sample4.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
                         <h3>HD Clarity Enhancement</h3>
@@ -238,14 +238,14 @@
                     <!-- Card 5 -->
                     <div class="card">
                         <div class="price-badge">Just Rs. 50/-</div>
-                        <div class="img-container">
+                        <div class="img-container" onclick="openLightbox('images/sample5.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample5.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
                             <div class="img-before-wrap" style="width: 50%;">
                                 <img src="images/sample5_before.jpg" alt="Before" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'; this.style.filter='grayscale(100%)';">
                             </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-range" oninput="moveSlider(this)">
+                            <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <button class="btn-zoom" onclick="openLightbox('images/sample5.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
                         <h3>Vintage Family Photo Fix</h3>
@@ -257,14 +257,14 @@
                     <!-- Card 6 -->
                     <div class="card">
                         <div class="price-badge">Just Rs. 50/-</div>
-                        <div class="img-container">
+                        <div class="img-container" onclick="openLightbox('images/sample6.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample6.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80'">
                             <div class="img-before-wrap" style="width: 50%;">
                                 <img src="images/sample6_before.jpg" alt="Before" onerror="this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80'; this.style.filter='grayscale(90%)';">
                             </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-range" oninput="moveSlider(this)">
+                            <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <button class="btn-zoom" onclick="openLightbox('images/sample6.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
                         <h3>Studio Retouch & Polish</h3>
