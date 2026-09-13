@@ -57,7 +57,7 @@ Don't change size, background, dress, and pose. Full high sharp result. Correct 
 
   // [மாடல் பெயர்கள்]: gemini-3.1-flash-image ("Nano Banana") தற்போதைய (2026) Gemini
   // image generation/editing மாடல். Imagen மாடல்கள் deprecated ஆகிவிட்டன.
-  const MODEL_NAMES = ['gemini-3.6-flash'];
+  const MODEL_NAMES = ['gemini-1.5-flash'];
 
   let lastError = null;
 
