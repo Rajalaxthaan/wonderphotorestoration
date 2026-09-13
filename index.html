@@ -24,7 +24,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: var(--bg-deep); color: var(--text-bright); line-height: 1.6; overflow-x: hidden; -webkit-user-select: none; user-select: none; }
+        body { background-color: var(--bg-deep); color: var(--text-bright); line-height: 1.6; overflow-x: hidden; }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
@@ -65,13 +65,13 @@
         /* Before-After Slider Container */
         .img-container { width: 100%; height: 300px; border-radius: 12px; overflow: hidden; position: relative; margin-bottom: 20px; border: 1px solid var(--glass-border); user-select: none; }
         
-        .img-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #020617; pointer-events: none; -webkit-user-drag: none; }
+        .img-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #020617; pointer-events: none; }
         
         .img-before-wrap { position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; z-index: 2; border-right: 2px solid var(--primary); }
         .img-before-wrap img { width: 320px; height: 100%; max-width: none; }
 
         /* Labels */
-        .badge-before, .badge-after { position: absolute; bottom: 10px; background: rgba(0,0,0,0.75); color: #fff; font-size: 0.7rem; padding: 3px 8px; border-radius: 4px; z-index: 5; font-weight: 600; letter-spacing: 0.5px; pointer-events: none; }
+        .badge-before, .badge-after { position: absolute; bottom: 10px; background: rgba(0,0,0,0.75); color: #fff; font-size: 0.7rem; padding: 3px 8px; border-radius: 4px; z-index: 5; font-weight: 600; letter-spacing: 0.5px; }
         .badge-before { left: 10px; color: #f87171; }
         .badge-after { right: 10px; color: #4ade80; }
 
@@ -96,7 +96,7 @@
         }
     </style>
 </head>
-<body oncontextmenu="return false;">
+<body>
 
     <header class="navbar">
         <div class="container nav-container">
@@ -276,14 +276,6 @@
             const value = slider.value;
             beforeWrap.style.width = value + '%';
         }
-
-        // Additional Image Protection Script (Disable Drag & Context Menu)
-        document.addEventListener('contextmenu', event => event.preventDefault());
-        document.addEventListener('dragstart', event => {
-            if (event.target.tagName === 'IMG') {
-                event.preventDefault();
-            }
-        });
     </script>
 </body>
 </html>
