@@ -119,12 +119,18 @@
         .btn-order { background: linear-gradient(135deg, #38bdf8, #0284c7); color: white; width: 100%; padding: 12px; border-radius: 10px; border: none; font-weight: 700; font-size: 0.95rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; transition: 0.2s; box-shadow: 0 4px 15px rgba(56,189,248,0.3); }
         .btn-order:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        /* Fullscreen Lightbox Modal */
-        .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(2, 6, 23, 0.95); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
-        .lightbox-content { max-width: 90%; max-height: 90vh; object-fit: contain; border-radius: 12px; border: 1px solid var(--glass-border); }
+        /* Fullscreen Lightbox Modal with Slider */
+        .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(2, 6, 23, 0.95); z-index: 2000; justify-content: center; align-items: center; padding: 20px; flex-direction: column; }
+        .lightbox-container { width: 90%; max-width: 650px; height: 80vh; border-radius: 12px; overflow: hidden; position: relative; border: 1px solid var(--glass-border); user-select: none; }
+        .lightbox-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #020617; pointer-events: none; }
+        .lightbox-before-wrap { position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; z-index: 2; border-right: 3px solid var(--primary); }
+        .lightbox-before-wrap img { width: 650px; height: 100%; max-width: none; }
+        .lightbox-range { position: absolute; -webkit-appearance: none; appearance: none; width: 100%; height: 100%; background: transparent; outline: none; margin: 0; z-index: 10; cursor: ew-resize; top: 0; left: 0; }
+        .lightbox-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 6px; height: 80vh; background: var(--primary); cursor: ew-resize; }
+        
         .lightbox-close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 2.5rem; cursor: pointer; z-index: 2010; font-weight: 300; transition: 0.2s; }
         .lightbox-close:hover { color: var(--primary); }
-        .lightbox-hint { position: absolute; bottom: 20px; color: var(--text-muted); font-size: 0.8rem; background: rgba(255,255,255,0.05); padding: 5px 15px; border-radius: 20px; }
+        .lightbox-hint { margin-top: 15px; color: var(--text-muted); font-size: 0.85rem; background: rgba(255,255,255,0.05); padding: 6px 18px; border-radius: 20px; }
 
         /* Disclaimer Footer */
         .disclaimer-box { background: rgba(255,255,255,0.015); border-top: 1px solid var(--glass-border); padding: 30px 0; margin-top: 30px; text-align: center; }
@@ -135,6 +141,7 @@
             .logo-img { height: 40px; }
             .trust-bar { gap: 15px; font-size: 0.75rem; }
             .hours-box { font-size: 0.8rem; margin: 0 15px 20px; }
+            .lightbox-container { height: 60vh; }
         }
     </style>
 </head>
@@ -200,7 +207,7 @@
                     <!-- Card 1 -->
                     <div class="card">
                         <div class="price-badge">Just Rs. 50/-</div>
-                        <div class="img-container" onclick="openLightbox('images/sample1.jpg')">
+                        <div class="img-container" onclick="openLightbox('images/sample1.jpg', 'images/sample1_before.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample1.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80'">
@@ -209,8 +216,8 @@
                             </div>
                             <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
-                        <button class="btn-zoom" onclick="openLightbox('images/sample1.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
-                        <h3>Classic Portrait Restoration</h3>
+                        <button class="btn-zoom" onclick="openLightbox('images/sample1.jpg', 'images/sample1_before.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
+                        <h3>Old Damaged Photo Repair</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
                             <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
@@ -219,7 +226,7 @@
                     <!-- Card 2 -->
                     <div class="card">
                         <div class="price-badge">Just Rs. 50/-</div>
-                        <div class="img-container" onclick="openLightbox('images/sample2.jpg')">
+                        <div class="img-container" onclick="openLightbox('images/sample2.jpg', 'images/sample2_before.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample2.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'">
@@ -228,8 +235,8 @@
                             </div>
                             <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
-                        <button class="btn-zoom" onclick="openLightbox('images/sample2.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
-                        <h3>Old Damaged Photo Repair</h3>
+                        <button class="btn-zoom" onclick="openLightbox('images/sample2.jpg', 'images/sample2_before.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
+                        <h3>Classic Portrait Restoration</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
                             <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
@@ -238,7 +245,7 @@
                     <!-- Card 3 -->
                     <div class="card">
                         <div class="price-badge">Just Rs. 50/-</div>
-                        <div class="img-container" onclick="openLightbox('images/sample3.jpg')">
+                        <div class="img-container" onclick="openLightbox('images/sample3.jpg', 'images/sample3_before.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample3.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80'">
@@ -247,8 +254,8 @@
                             </div>
                             <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
-                        <button class="btn-zoom" onclick="openLightbox('images/sample3.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
-                        <h3>Black & White Colorization</h3>
+                        <button class="btn-zoom" onclick="openLightbox('images/sample3.jpg', 'images/sample3_before.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
+                        <h3>Studio Retouch & Polish</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
                             <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
@@ -257,7 +264,7 @@
                     <!-- Card 4 -->
                     <div class="card">
                         <div class="price-badge">Just Rs. 50/-</div>
-                        <div class="img-container" onclick="openLightbox('images/sample4.jpg')">
+                        <div class="img-container" onclick="openLightbox('images/sample4.jpg', 'images/sample4_before.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample4.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=600&q=80'">
@@ -266,8 +273,8 @@
                             </div>
                             <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
-                        <button class="btn-zoom" onclick="openLightbox('images/sample4.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
-                        <h3>HD Clarity Enhancement</h3>
+                        <button class="btn-zoom" onclick="openLightbox('images/sample4.jpg', 'images/sample4_before.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
+                        <h3>Vintage Family Photo Fix</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
                             <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
@@ -276,7 +283,7 @@
                     <!-- Card 5 -->
                     <div class="card">
                         <div class="price-badge">Just Rs. 50/-</div>
-                        <div class="img-container" onclick="openLightbox('images/sample5.jpg')">
+                        <div class="img-container" onclick="openLightbox('images/sample5.jpg', 'images/sample5_before.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample5.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
@@ -285,8 +292,8 @@
                             </div>
                             <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
-                        <button class="btn-zoom" onclick="openLightbox('images/sample5.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
-                        <h3>Vintage Family Photo Fix</h3>
+                        <button class="btn-zoom" onclick="openLightbox('images/sample5.jpg', 'images/sample5_before.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
+                        <h3>HD Clarity Enhancement</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
                             <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
@@ -295,7 +302,7 @@
                     <!-- Card 6 -->
                     <div class="card">
                         <div class="price-badge">Just Rs. 50/-</div>
-                        <div class="img-container" onclick="openLightbox('images/sample6.jpg')">
+                        <div class="img-container" onclick="openLightbox('images/sample6.jpg', 'images/sample6_before.jpg')">
                             <span class="badge-before">BEFORE</span>
                             <span class="badge-after">AFTER</span>
                             <img src="images/sample6.jpg" alt="After" onerror="this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80'">
@@ -304,8 +311,8 @@
                             </div>
                             <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
-                        <button class="btn-zoom" onclick="openLightbox('images/sample6.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
-                        <h3>Studio Retouch & Polish</h3>
+                        <button class="btn-zoom" onclick="openLightbox('images/sample6.jpg', 'images/sample6_before.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
+                        <h3>Black & White Colorization</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
                             <i class="fab fa-whatsapp"></i> Order Today (Rs.50)
                         </a>
@@ -316,11 +323,19 @@
         </section>
     </main>
 
-    <!-- Lightbox Fullscreen Modal HTML -->
-    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
-        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-        <img class="lightbox-content" id="lightboxImg">
-        <div class="lightbox-hint">Click anywhere to close</div>
+    <!-- Lightbox Fullscreen Modal with Slider -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightboxForce()">&times;</span>
+        <div class="lightbox-container" onclick="event.stopPropagation()">
+            <span class="badge-before" style="z-index: 15; top: 10px; left: 10px; bottom: auto;">BEFORE</span>
+            <span class="badge-after" style="z-index: 15; top: 10px; right: 10px; bottom: auto;">AFTER</span>
+            <img id="lightboxAfterImg" src="" alt="After">
+            <div class="lightbox-before-wrap" id="lightboxBeforeWrap" style="width: 50%;">
+                <img id="lightboxBeforeImg" src="" alt="Before">
+            </div>
+            <input type="range" min="0" max="100" value="50" class="lightbox-range" oninput="moveLightboxSlider(this)">
+        </div>
+        <div class="lightbox-hint">Drag slider to compare • Click outside to close</div>
     </div>
 
     <footer class="disclaimer-box">
@@ -339,15 +354,34 @@
             beforeWrap.style.width = value + '%';
         }
 
-        // Lightbox Functions for Full Screen View
-        function openLightbox(imgSrc) {
-            const modal = document.getElementById('lightboxModal');
-            const modalImg = document.getElementById('lightboxImg');
-            modal.style.display = 'flex';
-            modalImg.src = imgSrc;
+        function moveLightboxSlider(slider) {
+            const beforeWrap = document.getElementById('lightboxBeforeWrap');
+            const value = slider.value;
+            beforeWrap.style.width = value + '%';
         }
 
-        function closeLightbox() {
+        // Lightbox Functions with Slider Support
+        function openLightbox(afterSrc, beforeSrc) {
+            const modal = document.getElementById('lightboxModal');
+            const afterImg = document.getElementById('lightboxAfterImg');
+            const beforeImg = document.getElementById('lightboxBeforeImg');
+            const rangeInput = modal.querySelector('.lightbox-range');
+            
+            afterImg.src = afterSrc;
+            beforeImg.src = beforeSrc;
+            rangeInput.value = 50;
+            document.getElementById('lightboxBeforeWrap').style.width = '50%';
+            
+            modal.style.display = 'flex';
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightboxModal') {
+                closeLightboxForce();
+            }
+        }
+
+        function closeLightboxForce() {
             const modal = document.getElementById('lightboxModal');
             modal.style.display = 'none';
         }
