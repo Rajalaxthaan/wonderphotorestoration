@@ -71,6 +71,11 @@
         .trust-bar { display: flex; justify-content: center; gap: 30px; margin-bottom: 25px; font-size: 0.85rem; color: var(--primary); font-weight: 600; flex-wrap: wrap; }
         .trust-bar span { display: inline-flex; align-items: center; gap: 6px; }
 
+        /* Working Hours Box */
+        .hours-box { background: rgba(56, 189, 248, 0.05); border: 1px dashed var(--primary); border-radius: 12px; max-width: 500px; margin: 0 auto 30px; padding: 12px 20px; display: flex; align-items: center; justify-content: center; gap: 15px; font-size: 0.9rem; color: var(--text-bright); }
+        .hours-box i { color: var(--accent-gold); font-size: 1.2rem; }
+        .hours-box span span { color: var(--primary); font-weight: 600; }
+
         /* How to Order Steps */
         .steps-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 900px; margin: 25px auto 40px; padding: 0 20px; }
         .step-box { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; text-align: center; }
@@ -129,6 +134,7 @@
             .hero h1 { font-size: 1.8rem; }
             .logo-img { height: 40px; }
             .trust-bar { gap: 15px; font-size: 0.75rem; }
+            .hours-box { font-size: 0.8rem; margin: 0 15px 20px; }
         }
     </style>
 </head>
@@ -155,6 +161,14 @@
                     <span><i class="fas fa-check-circle"></i> Fast WhatsApp Delivery</span>
                     <span><i class="fas fa-shield-alt"></i> Secure GPay Payment</span>
                     <span><i class="fas fa-star"></i> HD Studio Quality</span>
+                </div>
+
+                <!-- Working Hours Notice -->
+                <div class="hours-box">
+                    <i class="far fa-clock"></i>
+                    <div>
+                        <strong>Working Hours:</strong> Mon - Sat: <span>10:00 AM - 8:00 PM</span> | Sun: <span>10:00 AM - 1:00 PM</span>
+                    </div>
                 </div>
 
                 <!-- How to Order Steps -->
@@ -196,7 +210,7 @@
                             <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <button class="btn-zoom" onclick="openLightbox('images/sample1.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
-                        <h3>Old Damaged Photo Repair</h3>
+                        <h3>Classic Portrait Restoration</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
                             <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
@@ -215,7 +229,7 @@
                             <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <button class="btn-zoom" onclick="openLightbox('images/sample2.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
-                        <h3>Classic Portrait Restoration</h3>
+                        <h3>Old Damaged Photo Repair</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
                             <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
@@ -234,7 +248,7 @@
                             <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <button class="btn-zoom" onclick="openLightbox('images/sample3.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
-                        <h3>Studio Retouch & Polish</h3>
+                        <h3>Black & White Colorization</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
                             <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
@@ -253,7 +267,7 @@
                             <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <button class="btn-zoom" onclick="openLightbox('images/sample4.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
-                        <h3>Vintage Photo Fix</h3>
+                        <h3>HD Clarity Enhancement</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
                             <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
@@ -272,7 +286,7 @@
                             <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <button class="btn-zoom" onclick="openLightbox('images/sample5.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
-                        <h3>HD Clarity Enhancement</h3>
+                        <h3>Vintage Family Photo Fix</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
                             <i class="fab fa-whatsapp"></i> Order Now (Rs.50)
                         </a>
@@ -291,7 +305,7 @@
                             <input type="range" min="0" max="100" value="50" class="slider-range" onclick="event.stopPropagation()" oninput="moveSlider(this)">
                         </div>
                         <button class="btn-zoom" onclick="openLightbox('images/sample6.jpg')"><i class="fas fa-expand"></i> View Full Screen</button>
-                        <h3>Black & White Colorization</h3>
+                        <h3>Studio Retouch & Polish</h3>
                         <a href="https://wa.me/917904496883?text=Hi,%20I%20want%20to%20restore%20my%20photo%20for%20Rs.50.%20Here%20is%20my%20photo%20and%20GPay%20payment%20screenshot:" target="_blank" class="btn-order">
                             <i class="fab fa-whatsapp"></i> Order Today (Rs.50)
                         </a>
